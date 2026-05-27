@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mi Lista de Tareas Interactiva</title>
+  <link rel="stylesheet" href="estilos.css" />
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <aside class="sidebar">
+    <div class="brand">
+      <span class="brand-dot"></span>
+      <span class="brand-name">TASKS</span>
+    </div>
+
+    <nav class="nav-stats">
+      <div class="nav-stat">
+        <span id="total-tareas" class="stat-num">0</span>
+        <span class="stat-label">Total</span>
+      </div>
+      <div class="nav-divider"></div>
+      <div class="nav-stat">
+        <span id="tareas-pendientes" class="stat-num accent">0</span>
+        <span class="stat-label">Pendientes</span>
+      </div>
+      <div class="nav-divider"></div>
+      <div class="nav-stat">
+        <span id="tareas-completadas" class="stat-num green">0</span>
+        <span class="stat-label">Hechas</span>
+      </div>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <button id="btn-tema" class="icon-btn" title="Cambiar tema">
+        <i class="fa-solid fa-circle-half-stroke"></i>
+      </button>
+      <button id="btn-toggle" class="icon-btn" title="Ocultar lista">
+        <i class="fa-solid fa-eye"></i>
+      </button>
+    </div>
+  </aside>
+
+  <main class="main">
+
+    <header class="page-header">
+      <p class="eyebrow">Programación III — 2026</p>
+      <h1>Mi Lista de<br><em>Tareas</em></h1>
+    </header>
+
+    <div class="input-card">
+      <input
+        type="text"
+        id="nueva-tarea"
+        placeholder="¿Qué tenés que hacer hoy?"
+        autocomplete="off"
+      />
+      <button title="Agregar tarea" id="btn-agregar">
+        <i class="fa-solid fa-arrow-right"></i>
+      </button>
+    </div>
+
+    <div id="mensaje-error" class="alerta" style="display:none;">
+      <i class="fa-solid fa-circle-exclamation"></i>
+      Escribí una tarea antes de continuar.
+    </div>
+
+    <ul id="lista-tareas"></ul>
+
+    <div id="estado-vacio" class="empty-state">
+      <div class="empty-line"></div>
+      <div class="empty-line short"></div>
+      <div class="empty-line shorter"></div>
+      <p>Sin tareas por ahora</p>
+    </div>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
